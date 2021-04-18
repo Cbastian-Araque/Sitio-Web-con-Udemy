@@ -1,0 +1,158 @@
+/* Selector universal para el box-sizing */
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+/* En el :root se pueden asignar todos los valores que se quieran reutilizar, es una buena práctica */
+:root{
+    --blanco: #fff;
+    --oscuro: #000;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --fuenteTitulo: 3.8rem;
+    --degradadoFondo: #dfe9f3; /* color para aplicar en el degradado junto con --blanco */
+}
+
+
+/* valores globales */
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /* Truco para ajustar el box model */
+}
+
+h1{
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+body{
+    font-family: 'Krub', sans-serif;
+    font-size: 16px;
+    background-image: linear-gradient(to top, var(--degradadoFondo) 0%, var(--blanco) 100%);
+}
+
+
+.contenedor{
+    /*se establece como maximo 120rem, si no hay 120rem, que agarre 100% de la pantalla*/
+    max-width: 100rem;
+    margin: auto;
+}
+
+.boton{
+    background: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    width: 80%;
+    text-align: center;
+}
+
+.boton:hover{
+    color: var(--oscuro);
+    background: var(--primario);
+}
+
+/* media query para estilizar boton */
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+}
+
+.sombra{
+    box-shadow: 0px 5px 15px #888484;
+    background: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* titulos */
+.titulo span{
+    display: block;
+    font-size: 2rem;
+}
+
+/* Navegación principal */
+.nav-bg{
+    background: var(--secundario);
+}
+
+.navegacion-principal{
+display: flex;
+flex-direction: column;
+}
+
+/* media query para ajustar la barra de navegación */
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a{
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    text-transform: capitalize;
+}
+
+.navegacion-principal a:hover{
+    background: var(--primario);
+    color: var(--oscuro);
+}
+
+/*Sección de la imagen inicial*/
+
+.hero{
+    background-image: url(img/principal.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    /* padding: 20px; */
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/* se le agrega opacidad al total de la imagen*/
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.680);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+/* Bloque de código para alinear ubicación (bogotá) */
+.contenido-hero p{
+    display: flex;
+    align-items: center;
+}
